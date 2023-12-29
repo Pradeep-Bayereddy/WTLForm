@@ -6,6 +6,7 @@
     <title>Web To Lead</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
   </head>
   <body>
     <h1>Create Lead Form</h1>
@@ -18,9 +19,14 @@
       <input
         type="hidden"
         name="retURL"
-        value="https://trailhead.salesforce.com/"
+        value="https://pradeep-bayereddy.github.io/WTLForm/Thanks.html"
       />
       <input type="hidden" name="Lead_Date__c" class="outputDate" />
+      <input
+        type="hidden"
+        name="captcha_settings"
+        value='{"keyname":"WTLForm","fallback":"true","orgId":"00D5i00000DV88f","ts":""}'
+      />
 
       <label for="first_name">First Name</label
       ><input
@@ -62,7 +68,11 @@
           type="text" /></span
       > -->
       <br />
-
+      <div
+        class="g-recaptcha"
+        data-sitekey="6LfC8j8pAAAAAB2mCg5WX6Al0qESNW91iDwc153k"
+      ></div>
+      <br />
       <input type="submit" name="submit" class="submit" />
     </form>
   </body>

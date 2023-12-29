@@ -1,9 +1,15 @@
-function beforeSubmit() {
-  let outputDate = document.querySelector(".outputDate");
-  let inputDate = document.querySelector(".inputDate"); //Date - type of String
+let captchaChecked = false;
+function beforeSubmit(event) {
+  if (captchaChecked) {
+    let outputDate = document.querySelector(".outputDate");
+    let inputDate = document.querySelector(".inputDate"); //Date - type of String
 
-  let formattedDate = new Date(inputDate.value).toLocaleDateString("en-IN");
-  outputDate.value = formattedDate;
+    let formattedDate = new Date(inputDate.value).toLocaleDateString("en-IN");
+    outputDate.value = formattedDate;
+  } else {
+    alert("Please check the reCaptcha box!");
+    event.preventDefault();
+  }
 }
 
 function timestamp() {
@@ -18,3 +24,7 @@ function timestamp() {
   }
 }
 setInterval(timestamp, 500);
+
+function captchaSuccess() {
+  captchaChecked = true;
+}

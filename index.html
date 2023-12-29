@@ -13,7 +13,7 @@
     <form
       action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D5i00000DV88f"
       method="POST"
-      onsubmit="beforeSubmit()"
+      onsubmit="beforeSubmit(event)"
     >
       <input type="hidden" name="oid" value="00D5i00000DV88f" />
       <input
@@ -70,6 +70,7 @@
       <br />
       <div
         class="g-recaptcha"
+        data-callba="captchaSuccess"
         data-sitekey="6LfC8j8pAAAAAB2mCg5WX6Al0qESNW91iDwc153k"
       ></div>
       <br />
